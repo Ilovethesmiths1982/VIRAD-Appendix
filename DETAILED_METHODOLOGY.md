@@ -981,16 +981,16 @@ Paired bootstrap comparisons and a family-stratified paired bootstrap were perfo
 **Equation 35 | Bootstrap paired mean difference**
 
 $$
-D_b=\frac{1}{n}\sum_{i\in S_b}(a_i-b_i)
+d_b = \frac{1}{n}\sum_{i\in S_b}(a_i-b_i)
 $$
 
 **Equation 36 | Percentile bootstrap interval**
 
 $$
-\mathrm{CI}_{95\%}=\left[Q_{0.025}(D),\;Q_{0.975}(D)\right]
+CI_{0.95} = [Q_{0.025}(d),\ Q_{0.975}(d)]
 $$
 
-In Equation 35, each bootstrap replicate produces a paired mean difference, denoted by D with replicate index b. Equation 36 takes the 2.5th and 97.5th percentiles of these replicate values to form the reported 95% interval. Resampling within family preserves the broad family composition of the comparison instead of allowing one highly represented family to dominate a replicate by chance.
+In Equation 35, each bootstrap sample produces a paired mean difference, denoted by d with replicate index b. Equation 36 uses the 2.5th and 97.5th percentiles of the resulting bootstrap differences to define the 95% confidence interval. Resampling within family preserves the broad family composition of the comparison instead of allowing one highly represented family to dominate a replicate by chance.
 
 ## c. Multiple-testing correction
 
