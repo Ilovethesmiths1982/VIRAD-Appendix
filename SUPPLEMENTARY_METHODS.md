@@ -148,10 +148,6 @@ Test only each guide against its same-family accession set. Compute exact, ≤1-
 
 The unit of observation is chosen according to the analysis: accession, sequence, cluster, or family, not by counting overlapping windows as independent organisms. Paired and family-stratified bootstrap analyses used **10,000 draws** with seed 42; the latter resampled each family at its original size. Report 95% percentile confidence intervals from the 2.5th and 97.5th quantiles. Multiple hypothesis tests used Benjamini–Hochberg false-discovery-rate correction or Holm family-wise correction as specified for the comparison. Distinguish (a) prediction scores, (b) interval detection, (c) annotation agreement, (d) biological feature enrichment, and (e) independent guide sequence coverage; they are not interchangeable endpoints.
 
-## S15. Documentation scope
-
-The supplementary materials present computational methods, validation procedures, and numerical evidence through text, equations, and tables.
-
 ## S16. Supplementary documentation
 
 This section documents the study's computational methods, model specifications, and validation boundaries. Associated numerical evidence is provided in [Supplementary Tables](APPENDICES_AND_TABLES.md), and the supporting data are available in the [VIRAD data archive](https://drive.google.com/drive/folders/1n6sDwAfD4rUDg9qRLN996hVdfkCDaJew).
@@ -193,7 +189,7 @@ $$
 **Equation 4 | Cluster-disjointness constraint**
 
 $$
-C_{\mathrm{train}}\cap C_{\mathrm{val}}=C_{\mathrm{train}}\cap C_{\mathrm{test}}=C_{\mathrm{val}}\cap C_{\mathrm{test}}=\varnothing
+C_{\mathrm{train}}\cap C_{\mathrm{val}}=C_{\mathrm{train}}\cap C_{\mathrm{test}}=C_{\mathrm{val}}\cap C_{\mathrm{test}}=\emptyset
 $$
 
 **Equation 5 | Pairwise mismatch fraction**
@@ -380,13 +376,13 @@ $$
 **Equation 35 | Bootstrap paired mean difference**
 
 $$
-\Delta^{*(b)}=\frac{1}{n}\sum_{i\in S_b}(a_i-b_i)
+D_b=\frac{1}{n}\sum_{i\in S_b}(a_i-b_i)
 $$
 
 **Equation 36 | Percentile bootstrap interval**
 
 $$
-\mathrm{CI}_{0.95}=\left[Q_{0.025}(\Delta^{*}),\,Q_{0.975}(\Delta^{*})\right]
+\mathrm{CI}_{95\%}=\left[Q_{0.025}(D),\;Q_{0.975}(D)\right]
 $$
 
 ## S18. Expanded chronological methods and audit checkpoints
