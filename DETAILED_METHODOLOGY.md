@@ -999,7 +999,7 @@ $$
 **Equation 36 | Percentile bootstrap interval**
 
 $$
-\mathrm{CI}_{0.95}=\left[Q_{0.025}(\Delta^*),\,Q_{0.975}(\Delta^*)\right]
+\mathrm{CI}_{0.95}=\left[Q_{0.025}(\Delta^{*}),\,Q_{0.975}(\Delta^{*})\right]
 $$
 
 As defined in Equations 35 and 36, the reported 95% interval uses the 2.5th and 97.5th percentiles of the bootstrap replicate distribution. Resampling within family preserves the broad family composition of the comparison instead of allowing one highly represented family to dominate a replicate by chance.
