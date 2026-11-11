@@ -1,8 +1,7 @@
-# RC27 VIRAD Appendices and Supplementary Tables
+# VIRAD Appendices and Supplementary Tables
 
-**Companion to:** [RC27 VIRAD Article](RC27_VIRAD_ARTICLE_DRAFT.md)
 
-These appendices organize the verified numerical tables and supporting information from the original research paper and the repository's existing `APPENDICES.md`. They are designed to accompany the RC27 manuscript, not to introduce additional experiments. Detailed algorithms and equations appear in [RC27 Detailed Methods](RC27_DETAILED_METHODS.md); the [supplementary attention figure captions](RC27_SUPPLEMENTARY_FIGURE_LEGENDS.md) are maintained separately.
+These appendices present the study's numerical summaries, validation records, motif catalogs, and Cas13d guide evidence.
 
 **Scientific reporting distinction:** The validation partition was used for development and model evaluation. The separate 243-accession assessment tested the frozen 18-guide panel. Their metrics must never be described as the same test. The ten-family motif-discovery analysis and six-family guide-panel analysis likewise use different scopes.
 
@@ -215,11 +214,11 @@ For publication, the complete 300-guide development table and full 1,424-row mot
 
 ### N1. Guide-level versus panel-level coverage
 
-The percentages in main Table 1 describe whether **one individual guide** finds a qualifying match in its eligible same-family accession set. Appendix K, Table K1 instead measures whether **at least one of three frozen guides** matches an accession, counting that accession only once. A guide that matches its own source accession provides no evidence of generalizability; source-excluded development coverage therefore removes the design source.
+The percentages in the representative guide table describe whether **one individual guide** finds a qualifying match in its eligible same-family accession set. Appendix K, Table K1 instead measures whether **at least one of three frozen guides** matches an accession, counting that accession only once. A guide that matches its own source accession provides no evidence of generalizability; source-excluded development coverage therefore removes the design source.
 
 ### N2. Verified representative full guide identifiers
 
-The following six examples correspond to the six representative rows in main Table 1. The exact identifiers come from original research Tables 6A and 6B. The complete **18-guide** panel-level evidence follows in Tables N2 and N3. The original guide sequences and frozen data files still need to accompany the final data deposit.
+The following six examples correspond to the six representative rows in the representative guide table. The exact identifiers come from study Tables 6A and 6B. The complete **18-guide** panel-level evidence follows in Tables N2 and N3. The original guide sequences and frozen data files still need to accompany the final data deposit.
 
 | Viral family | Full frozen-panel guide identifier | Guide-level test coverage at ≤2 mismatches | Reported human-transcript alignments |
 |---|---|---:|---:|
@@ -232,9 +231,9 @@ The following six examples correspond to the six representative rows in main Tab
 
 **Note:** Human-transcript counts are reported Bowtie2 alignments under the specified screen, not confirmed off-target cleavage. Guide-level test percentages must not be substituted for three-guide family-union percentages in Appendix K.
 
-### N3. Complete frozen 18-guide evidence from the original research
+### N3. Complete frozen 18-guide evidence from the study
 
-The following two tables reproduce the 18-row data from the original research paper's **Tables 6A and 6B**. They are ordered identically and joined by full guide identifier. Table N2 contains motif/development measurements; Table N3 contains guide-level test matching, human-transcript alignment counts, and development ranking. This is the complete **published panel-level summary**, not a substitute for the actual 23-nt guide sequences, source FASTA, panel checksum, or full development files.
+The following two tables reproduce the 18-row data from the study's guide-development and test tables. They are ordered identically and joined by full guide identifier. Table N2 contains motif/development measurements; Table N3 contains guide-level test matching, human-transcript alignment counts, and development ranking. This is the complete **published panel-level summary**, not a substitute for the actual 23-nt guide sequences, source FASTA, panel checksum, or full development files.
 
 **Table N2**
 
@@ -301,7 +300,7 @@ The following two tables reproduce the 18-row data from the original research pa
 | Six self-attention PNGs and cross-attention image | Filenames known from local PowerShell search; original pixels/metadata have not been uploaded here |
 | Any code/configuration or statistical notebooks | Refer to repository implementation and frozen run-specific configurations, rather than assuming every branch was active |
 
-**Appendix readiness:** Tables A1, D1, F1, F2, G1, K1, M1, N2, and N3 are prepared for the RC27 supplement. Final submission still requires matching original files, verified figure exports, author approval, and formatting under the organizer's appendix policy.
+**Appendix readiness:** Tables A1, D1, F1, F2, G1, K1, M1, N2, and N3 are prepared for this supplement. Final submission still requires verification against frozen analysis files and final figure exports.
 
 ---
 
@@ -352,32 +351,3 @@ These are descriptive medians for the full motif catalog, not the length-matched
 
 ---
 
-## References
-
-Fu, L., Niu, B., Zhu, Z., Wu, S., & Li, W. (2012). CD-HIT: Accelerated for clustering the next-generation sequencing data. *Bioinformatics, 28*(23), 3150–3152. https://doi.org/10.1093/bioinformatics/bts565
-
-Fu, L., Cao, Y., Wu, J., Peng, Q., Nie, Q., & Xie, X. (2022). UFold: Fast and accurate RNA secondary structure prediction with deep learning. *Nucleic Acids Research, 50*(3), e14. https://doi.org/10.1093/nar/gkab1074
-
-Hubisz, M. J., Pollard, K. S., & Siepel, A. (2011). PHAST and RPHAST: Phylogenetic analysis with space/time models. *Briefings in Bioinformatics, 12*(1), 41–51. https://doi.org/10.1093/bib/bbq072
-
-Jukes, T. H., & Cantor, C. R. (1969). Evolution of protein molecules. In H. N. Munro (Ed.), *Mammalian protein metabolism* (Vol. 3, pp. 21–132). Academic Press.
-
-Kalvari, I., Nawrocki, E. P., Ontiveros-Palacios, N., Argasinska, J., Lamkiewicz, K., Marz, M., Griffiths-Jones, S., Toffano-Nioche, C., Gautheret, D., Weinberg, Z., Rivas, E., Eddy, S. R., Finn, R. D., Bateman, A., & Petrov, A. I. (2021). Rfam 14: Expanded coverage of metagenomic, viral and microRNA families. *Nucleic Acids Research, 49*(D1), D192–D200. https://doi.org/10.1093/nar/gkaa1047
-
-Katoh, K., & Standley, D. M. (2013). MAFFT multiple sequence alignment software version 7: Improvements in performance and usability. *Molecular Biology and Evolution, 30*(4), 772–780. https://doi.org/10.1093/molbev/mst010
-
-Langmead, B., & Salzberg, S. L. (2012). Fast gapped-read alignment with Bowtie 2. *Nature Methods, 9*(4), 357–359. https://doi.org/10.1038/nmeth.1923
-
-Lin, Z., Akin, H., Rao, R., Hie, B., Zhu, Z., Lu, W., Smetanin, N., Verkuil, R., Kabeli, O., Shmueli, Y., dos Santos Costa, A., Fazel-Zarandi, M., Sercu, T., Candido, S., & Rives, A. (2023). Evolutionary-scale prediction of atomic-level protein structure with a language model. *Science, 379*(6637), 1123–1130. https://doi.org/10.1126/science.ade2574
-
-Lorenz, R., Bernhart, S. H., Höner zu Siederdissen, C., Tafer, H., Flamm, C., Stadler, P. F., & Hofacker, I. L. (2011). ViennaRNA Package 2.0. *Algorithms for Molecular Biology, 6*, 26. https://doi.org/10.1186/1748-7188-6-26
-
-Loshchilov, I., & Hutter, F. (2019). Decoupled weight decay regularization. In *International Conference on Learning Representations*.
-
-Nawrocki, E. P., & Eddy, S. R. (2013). Infernal 1.1: 100-fold faster RNA homology searches. *Bioinformatics, 29*(22), 2933–2935. https://doi.org/10.1093/bioinformatics/btt509
-
-Saitou, N., & Nei, M. (1987). The neighbor-joining method: A new method for reconstructing phylogenetic trees. *Molecular Biology and Evolution, 4*(4), 406–425. https://doi.org/10.1093/oxfordjournals.molbev.a040454
-
-Sayers, E. (2022, November 17). *A general introduction to the E-utilities*. In *Entrez Programming Utilities Help*. National Center for Biotechnology Information. https://www.ncbi.nlm.nih.gov/books/NBK25497/
-
-Vaswani, A., Shazeer, N., Parmar, N., Uszkoreit, J., Jones, L., Gomez, A. N., Kaiser, Ł., & Polosukhin, I. (2017). Attention is all you need. *Advances in Neural Information Processing Systems, 30*, 5998–6008.
