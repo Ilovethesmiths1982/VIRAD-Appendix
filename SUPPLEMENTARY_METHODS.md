@@ -386,7 +386,7 @@ $$
 **Equation 36 | Percentile bootstrap interval**
 
 $$
-\mathrm{CI}_{0.95}=\left[Q_{0.025}(\Delta^*),\,Q_{0.975}(\Delta^*)\right]
+\mathrm{CI}_{0.95}=\left[Q_{0.025}(\Delta^{*}),\,Q_{0.975}(\Delta^{*})\right]
 $$
 
 ## S18. Expanded chronological methods and audit checkpoints
