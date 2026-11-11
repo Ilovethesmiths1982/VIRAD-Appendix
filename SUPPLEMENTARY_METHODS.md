@@ -150,7 +150,7 @@ The unit of observation is chosen according to the analysis: accession, sequence
 
 ## S15. Documentation scope
 
-The supplementary materials present the computational methods, validation procedures, and numerical evidence in text, equations, and tables. No framework diagram or supplementary figure is included.
+The supplementary materials present computational methods, validation procedures, and numerical evidence through text, equations, and tables.
 
 ## S16. Supplementary documentation
 
@@ -528,8 +528,6 @@ The primary segmentation loss combines masked binary cross-entropy with sigmoid 
 The presence of a branch in `virad.py` does not prove that it contributed to a particular recorded run. Confirm activation from training configuration or logs before claiming an ablation or a quantified improvement from that branch. Similarly, the staged 2+5+5+43 epoch curriculum is not a matched set of independently trained modality ablations, and attention entropy does not constitute causal evidence of RNA motif function.
 
 ### S19.7 Suggested internal architecture illustration
-
-For an additional **supplementary** architecture diagram, use the following left-to-right chain: synchronized nucleotide one-hot, phyloP conservation, UFold contacts, and ESM-2 host input; four 768-dimensional embedding branches; four learned softmax gates plus six-head sequence-to-structure attention; a six-block Viroformer encoder with 12-head biased self-attention, host cross-attention and a 768-to-3,072-to-768 feed-forward path; one symmetric pair-refinement and structure-gating pass; then nucleotide motif outputs and frozen interval decoding. This is a schematic specification, **not** a claim that a new diagram export has been generated.
 
 ## S20. Complete Viroformer computational methodology
 
