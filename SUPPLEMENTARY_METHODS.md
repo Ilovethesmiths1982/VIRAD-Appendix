@@ -148,9 +148,9 @@ Test only each guide against its same-family accession set. Compute exact, ≤1-
 
 The unit of observation is chosen according to the analysis: accession, sequence, cluster, or family, not by counting overlapping windows as independent organisms. Paired and family-stratified bootstrap analyses used **10,000 draws** with seed 42; the latter resampled each family at its original size. Report 95% percentile confidence intervals from the 2.5th and 97.5th quantiles. Multiple hypothesis tests used Benjamini–Hochberg false-discovery-rate correction or Holm family-wise correction as specified for the comparison. Distinguish (a) prediction scores, (b) interval detection, (c) annotation agreement, (d) biological feature enrichment, and (e) independent guide sequence coverage; they are not interchangeable endpoints.
 
-## S15. Framework figure
+## S15. Documentation scope
 
-**Figure 1. VIRAD computational workflow (to be supplied).** A single overview diagram will illustrate the end-to-end analysis. The figure is not yet included in this repository. All methods and quantitative evidence remain documented in the text and supplementary tables; no additional figure panels are required.
+The supplementary materials present the computational methods, validation procedures, and numerical evidence in text, equations, and tables. No framework diagram or supplementary figure is included.
 
 ## S16. Supplementary documentation
 
