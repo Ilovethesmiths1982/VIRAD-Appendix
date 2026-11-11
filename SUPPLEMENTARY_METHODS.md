@@ -380,13 +380,13 @@ $$
 **Equation 35 | Bootstrap paired mean difference**
 
 $$
-D_b=\frac{1}{n}\sum_{i\in S_b}(a_i-b_i)
+d_b = \frac{1}{n}\sum_{i\in S_b}(a_i-b_i)
 $$
 
 **Equation 36 | Percentile bootstrap interval**
 
 $$
-\mathrm{CI}_{95\%}=\left[Q_{0.025}(D),\;Q_{0.975}(D)\right]
+CI_{0.95} = [Q_{0.025}(d),\ Q_{0.975}(d)]
 $$
 
 ## S18. Expanded chronological methods and audit checkpoints
