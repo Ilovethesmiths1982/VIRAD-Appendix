@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "virad"
+version = "0.1.0"
+description = "Multimodal deep learning for conserved viral RNA motif discovery and Cas13d target prioritization"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+dependencies = [
+  "biopython==1.81",
+  "numpy>=1.24,<2",
+  "PyYAML>=6,<7",
+  "scikit-learn>=1.3,<2",
+  "scipy>=1.10,<2",
+  "torch==2.0.1",
+  "tqdm>=4.65,<5",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7.4,<9"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src", "."]
+testpaths = ["tests"]
