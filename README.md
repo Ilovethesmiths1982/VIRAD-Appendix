@@ -13,6 +13,7 @@
 | [Computational Environment](COMPUTATIONAL_ENVIRONMENT.md) | Hardware, software, optimization settings, and reproducibility information |
 | [Supplementary Figure Legends](SUPPLEMENTARY_FIGURE_LEGENDS.md) | Figure descriptions and supporting methodological context |
 | [Source Code](SOURCE_CODE.md) | Index of selected implementation files and their functions |
+| [Reproducibility Protocol](REPRODUCIBILITY_PROTOCOL.md) | Required artifacts, example command interfaces, data-firewall checks, and independent verification checklist |
 
 ## Research workflow
 
@@ -43,7 +44,7 @@ Access to these files depends on the Google Drive folder's sharing settings.
 
 Selected research scripts and model modules are included in the [source-code index](SOURCE_CODE.md), covering preprocessing, training, validation, inference, interval decoding, Cas13d guide assessment, model architecture, partitioning, and window construction.
 
-The included code is a **partial research snapshot**, not a complete standalone software distribution. Additional dependencies, input data, model assets, and configurations may be required for execution.
+The included code is a **partial research snapshot**, not a complete standalone software distribution. See the [reproducibility protocol](REPRODUCIBILITY_PROTOCOL.md) for documented command interfaces, required input manifests, and current limitations. Additional dependencies, input data, model assets, and configurations may be required for execution.
 
 ## Scientific scope
 
