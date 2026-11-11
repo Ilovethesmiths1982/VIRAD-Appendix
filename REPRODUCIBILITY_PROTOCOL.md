@@ -14,7 +14,7 @@ This protocol distinguishes **documented methods**, **available code**, and **ar
 
 ## 2. Required inputs and provenance
 
-Preserve the following before running any workflow:
+An independent reproduction requires the following records before workflow execution:
 
 - Accession/version identifiers, source database, retrieval date, raw viral FASTA/GFF3, and any RNA annotations.
 - Sequence QC and CD-HIT-EST clustering output with cluster IDs and family assignments.
@@ -24,7 +24,7 @@ Preserve the following before running any workflow:
 - Exact training configuration, random seed, checkpoints, and validation-selected decoder parameters.
 - Motif catalog and Cas13d development inputs, including frozen-panel manifest and untouched-test population.
 
-The [supplementary data folder](https://drive.google.com/drive/folders/1n6sDwAfD4rUDg9qRLN996hVdfkCDaJew) contains motif, guide-development, freeze, and test collections. **Do not assume it contains every upstream input or a complete executable reproduction package.**
+The [supplementary data folder](https://drive.google.com/drive/folders/1n6sDwAfD4rUDg9qRLN996hVdfkCDaJew) contains motif, guide-development, freeze, and test collections. **The archive has not been verified to contain every upstream input or a complete executable reproduction package.**
 
 ## 3. Software and configuration
 
@@ -36,13 +36,13 @@ The archived configuration and environment files are:
 - [pyproject.toml](pyproject.toml)
 - [Computational environment](COMPUTATIONAL_ENVIRONMENT.md)
 
-These files were preserved as supplied. They should be checked against the actual frozen run before treating any parameter as the definitive production value. Record operating system, Python, CUDA/driver, PyTorch, CD-HIT-EST, MAFFT, PHAST, UFold, Bowtie2, and ViennaRNA versions when applicable.
+These files were preserved as supplied. Independent verification requires comparison with the frozen run before any parameter can be treated as the definitive production value. Applicable operating-system, Python, CUDA/driver, PyTorch, CD-HIT-EST, MAFFT, PHAST, UFold, Bowtie2, and ViennaRNA versions should be recorded.
 
 **Caution:** The repository includes selected modules, not all dependencies imported by the scripts. Installation or execution may fail until the remaining implementation files and external programs are supplied.
 
 ## 4. Example command interfaces
 
-The following commands illustrate the existing CLI arguments. Replace angle-bracket placeholders with verified local file paths. They are **templates**, not a claim of successful execution.
+The following commands illustrate the existing CLI arguments. Angle-bracket placeholders represent verified local file paths. They are **templates**, not a claim of successful execution.
 
 ### Preprocessing
 
@@ -54,7 +54,7 @@ python scripts/preprocess.py \
   --annotations <annotations.gff3>
 ```
 
-For production, ensure that the annotation coordinate conventions and required structure and conservation inputs are configured correctly. Avoid skipping structure prediction when reproducing a structure-dependent analysis.
+Production preprocessing requires consistent annotation coordinate conventions and the appropriate structure and conservation inputs. Reproduction of structure-dependent analyses requires structure prediction to remain enabled.
 
 ### Training
 
@@ -66,7 +66,7 @@ python scripts/train.py \
   --seed 42
 ```
 
-A seed alone does not guarantee bitwise reproducibility across hardware, CUDA versions, or nondeterministic kernels. Record the actual run configuration and device.
+A seed alone does not guarantee bitwise reproducibility across hardware, CUDA versions, or nondeterministic kernels. The actual run configuration and device must be recorded.
 
 ### Inference
 
@@ -78,7 +78,7 @@ python scripts/infer.py \
   --out-dir <inference_output_directory>
 ```
 
-Ensure that feature inputs and model weights correspond to the same trained model and data conventions.
+Feature inputs and model weights must correspond to the same trained model and data conventions.
 
 ### Cas13d development, freeze, and untouched test
 
@@ -107,25 +107,25 @@ python scripts/cas13d_full_validation.py test \
   --outdir <test_output_directory>
 ```
 
-The actual development analysis may require additional optional inputs for family alignments, motif catalogs, human-transcriptome screening, guide structure, and activity evidence. Do not interpret the minimal command above as reproducing every optional analysis.
+The actual development analysis may require additional optional inputs for family alignments, motif catalogs, human-transcriptome screening, guide structure, and activity evidence. The minimal command does not reproduce every optional analysis.
 
 ## 5. Independent validation checklist
 
-- [ ] Recompute and verify cluster disjointness across train, validation, and test.
-- [ ] Verify all sequence IDs and window coordinates against the original manifest.
-- [ ] Confirm that conservation fitting used training records only.
-- [ ] Confirm that model and decoder selection used permitted development partitions.
-- [ ] Compare reported metrics with rerun metrics using the same evaluation units and thresholds.
-- [ ] Verify the frozen guide-panel file hash before untouched-test evaluation.
-- [ ] Confirm that test sequences were excluded from guide generation, development ranking, and threshold selection.
-- [ ] Recalculate per-family and overall test coverage from raw sequence matches.
-- [ ] Record deviations, unavailable artifacts, and non-reproduced results rather than substituting approximations.
+- [ ] Cluster disjointness across training, validation, and test is independently recomputed and verified.
+- [ ] Sequence identifiers and window coordinates are checked against the original manifest.
+- [ ] Conservation fitting is verified to use training records only.
+- [ ] Model and decoder selection are verified against the permitted development partitions.
+- [ ] Reported and reproduced metrics are compared using identical evaluation units and thresholds.
+- [ ] The frozen guide-panel file hash is verified before untouched-test evaluation.
+- [ ] Test-sequence exclusion from guide generation, development ranking, and threshold selection is verified.
+- [ ] Per-family and overall test coverage are recalculated from raw sequence matches.
+- [ ] Deviations, unavailable artifacts, and unreproduced results are documented without substituting approximations.
 
 ## 6. Reported analysis checkpoints
 
 These are **reported results to verify**, not automated pass/fail tests: 59,630 training windows, 12,852 validation windows, 13,209 test windows; 1,424 cataloged motifs; 300 development guide candidates; 18 frozen guides; and 106 of 243 untouched test accessions matched by the panel at a threshold of at most two mismatches.
 
-These counts belong to different analytical stages and must not be treated as interchangeable sample sizes. Check the supplementary tables for family-specific denominators, definitions, and limitations.
+These counts belong to different analytical stages and must not be treated as interchangeable sample sizes. Family-specific denominators, definitions, and limitations are documented in the supplementary tables.
 
 ## 7. Known limitations
 
