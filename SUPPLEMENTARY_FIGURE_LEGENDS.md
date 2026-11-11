@@ -1,6 +1,6 @@
-# RC27 VIRAD , Supplementary Figure Legends
+# VIRAD Supplementary Figure Legends
 
-This document supports the [main article](RC27_VIRAD_ARTICLE_DRAFT.md), which places the captions of its five main figures directly beneath their respective insertion points. It provides the **supplementary attention figure**, with the figure placeholder and caption kept together as they should appear in the supplemental attachment.
+This document provides supplementary figure descriptions and notes on the available model-derived visualization artifacts.
 
 ## Supplementary Figure S4. Attention heatmaps from the six Viroformer blocks
 
@@ -26,7 +26,7 @@ This document supports the [main article](RC27_VIRAD_ARTICLE_DRAFT.md), which pl
 
 The six Viroformer blocks exhibited distinct self-attention distributions (Supplementary Figure S4a–f), indicating differences in how successive encoder layers weighted nucleotide positions within the input window. Cross-attention patterns (Supplementary Figure S4g) provide an additional view of interactions between the model's learned representations. The quantitative analysis in the main article showed relatively diffuse self-attention across much of the 512-nt window and comparatively concentrated fusion attention; host cross-attention was near-uniform under the recorded settings. These findings describe the model's internal behavior and are not sufficient, on their own, to infer causal biological mechanisms.
 
-## Relationship to the main article
+## Interpretation and availability
 
 **Main Figure 3** summarizes normalized attention entropy and effective attended positions across the six self-attention blocks, fusion attention and host cross-attention. **Supplementary Figure S4(a–g)** shows the detailed heatmaps. Using one grouped S4 caption prevents each block from counting as a separate main-paper display item.
 
