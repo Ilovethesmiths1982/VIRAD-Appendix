@@ -1,6 +1,9 @@
 # VIRAD
 ### Supplementary Methods, Data, and Source Code
 
+**Researcher:** Zhyrex G. Sablay  
+**Institution:** Tarlac National High School
+
 **VIRAD** is a leakage-controlled multimodal computational framework for identifying conserved viral RNA motifs and prioritizing candidate Cas13d guides. This repository presents the study's extended methodology, mathematical formulations, supplementary tables, computational documentation, and selected implementation files in a structured research appendix.
 
 ## Repository contents
