@@ -139,7 +139,7 @@ Python's built-in round behavior was used. No hidden minimum-per-partition rule 
 **Equation 4 | Cluster-disjointness constraint**
 
 $$
-C_{\mathrm{train}}\cap C_{\mathrm{val}}=C_{\mathrm{train}}\cap C_{\mathrm{test}}=C_{\mathrm{val}}\cap C_{\mathrm{test}}=\varnothing
+C_{\mathrm{train}}\cap C_{\mathrm{val}}=C_{\mathrm{train}}\cap C_{\mathrm{test}}=C_{\mathrm{val}}\cap C_{\mathrm{test}}=\emptyset
 $$
 
 As shown in Equation 4, a cluster can appear in only one partition. Because all member sequences inherit their cluster's assignment, this rule is stronger than checking only whether exact sequence identifiers are duplicated.
@@ -981,16 +981,16 @@ Paired bootstrap comparisons and a family-stratified paired bootstrap were perfo
 **Equation 35 | Bootstrap paired mean difference**
 
 $$
-\Delta^{*(b)}=\frac{1}{n}\sum_{i\in S_b}(a_i-b_i)
+D_b=\frac{1}{n}\sum_{i\in S_b}(a_i-b_i)
 $$
 
 **Equation 36 | Percentile bootstrap interval**
 
 $$
-\mathrm{CI}_{0.95}=\left[Q_{0.025}(\Delta^{*}),\,Q_{0.975}(\Delta^{*})\right]
+\mathrm{CI}_{95\%}=\left[Q_{0.025}(D),\;Q_{0.975}(D)\right]
 $$
 
-As defined in Equations 35 and 36, the reported 95% interval uses the 2.5th and 97.5th percentiles of the bootstrap replicate distribution. Resampling within family preserves the broad family composition of the comparison instead of allowing one highly represented family to dominate a replicate by chance.
+In Equation 35, each bootstrap replicate produces a paired mean difference, denoted by D with replicate index b. Equation 36 takes the 2.5th and 97.5th percentiles of these replicate values to form the reported 95% interval. Resampling within family preserves the broad family composition of the comparison instead of allowing one highly represented family to dominate a replicate by chance.
 
 ## c. Multiple-testing correction
 
