@@ -48,6 +48,10 @@ Selected research scripts and model modules are included in the [source-code ind
 
 The included code is a **partial research snapshot**, not a complete standalone software distribution. See the [reproducibility protocol](REPRODUCIBILITY_PROTOCOL.md) for documented command interfaces, required input manifests, and current limitations. Additional dependencies, input data, model assets, and configurations may be required for execution.
 
+## Reproducibility status
+
+The archive documents the reported analyses and includes selected implementation files, but **a complete independent end-to-end reproduction has not been demonstrated**. Several scripts import modules that are not included in this supplementary repository. The two archived configurations also differ in the number of motif classes (`configs/paper.yaml`: 50; `configs/significant-130.yaml`: 87); the configuration used for the reported production run must be verified against the frozen training record. Availability of the complete training inputs, partition manifests, and trained model checkpoints has not been independently confirmed. The [reproducibility protocol](REPRODUCIBILITY_PROTOCOL.md) identifies the remaining requirements.
+
 ## Scientific scope
 
 The reported motif and guide findings are based on computational analyses. Annotation-unmatched motifs are not experimentally validated novel motifs. Predicted guide coverage does not demonstrate antiviral efficacy or establish biological safety. Development-set analyses and untouched-test results are reported separately to preserve their respective evaluation boundaries.
