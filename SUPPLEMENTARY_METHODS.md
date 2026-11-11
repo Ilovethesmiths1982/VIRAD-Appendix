@@ -550,7 +550,7 @@ The original tensor contract is:
 | Motif type | `[B,512]` | One of 87 valid classes or ignore index −1 |
 | Fused/encoder states | `[B,512,768]` | Shared learned representation |
 
-The source-paper **Algorithm 4** requires consistent sequence and conservation slices, the correct contact-cache provenance, finite numeric tensors, and aligned label coordinates. A mismatch rejects the example rather than silently assigning a conservation score or predicted contact to the wrong base. The 512-nt window with 256-nt stride is the *training* context; the later 1,024-nt genomic inference context is a separate processing stage.
+**Algorithm 4** requires consistent sequence and conservation slices, the correct contact-cache provenance, finite numeric tensors, and aligned label coordinates. A mismatch rejects the example rather than silently assigning a conservation score or predicted contact to the wrong base. The 512-nt window with 256-nt stride is the *training* context; the later 1,024-nt genomic inference context is a separate processing stage.
 
 ### S20.2 Modality embedding before transformer attention
 
