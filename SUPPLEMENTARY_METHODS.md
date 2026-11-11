@@ -175,13 +175,13 @@ $$
 **Equation 3a | Training-cluster allocation**
 
 $$
-n_{\mathrm{train}}=\operatorname{round}(0.70n)
+n_{\mathrm{train}}=\mathrm{round}(0.70n)
 $$
 
 **Equation 3b | Validation-cluster allocation**
 
 $$
-n_{\mathrm{val}}=\operatorname{round}(0.15n)
+n_{\mathrm{val}}=\mathrm{round}(0.15n)
 $$
 
 **Equation 3c | Test-cluster allocation**
