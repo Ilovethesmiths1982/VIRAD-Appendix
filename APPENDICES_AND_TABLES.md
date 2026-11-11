@@ -218,7 +218,7 @@ The percentages in the representative guide table describe whether **one individ
 
 ### N2. Verified representative full guide identifiers
 
-The following six examples correspond to the six representative rows in the representative guide table. The exact identifiers come from study Tables 6A and 6B. The complete **18-guide** panel-level evidence follows in Tables N2 and N3. The original guide sequences and frozen data files still need to accompany the final data deposit.
+The following six examples correspond to the six representative rows in the representative guide table. The exact identifiers come from study Tables 6A and 6B. The complete **18-guide** panel-level evidence follows in Tables N2 and N3. The complete guide sequences and frozen data files should be verified against the linked supplementary data archive.
 
 | Viral family | Full frozen-panel guide identifier | Guide-level test coverage at ≤2 mismatches | Reported human-transcript alignments |
 |---|---|---:|---:|
@@ -293,14 +293,14 @@ The following two tables reproduce the 18-row data from the study's guide-develo
 
 | Supplementary data | Current status and requirement |
 |---|---|
-| Full 1,424-row motif catalog | Described in the original study; exact file must be attached or deposited |
+| Full 1,424-row motif catalog | Referenced in the study records; availability and file identity must be verified against the data archive |
 | All 300 development candidates and their screening metrics | Described in the original study; exact file must be attached or deposited |
 | Final 18-guide panel and SHA-256 manifest | All 18 panel-level evidence rows now appear in Tables N2 and N3; exact guide sequence files and hash manifest remain necessary |
 | Frozen 243-accession matching and family-union table | Family totals reproduced in Appendix K; accession-level table remains necessary |
 | Six self-attention PNGs and cross-attention image | Filenames known from local PowerShell search; original pixels/metadata have not been uploaded here |
 | Any code/configuration or statistical notebooks | Refer to repository implementation and frozen run-specific configurations, rather than assuming every branch was active |
 
-**Appendix readiness:** Tables A1, D1, F1, F2, G1, K1, M1, N2, and N3 are prepared for this supplement. Final submission still requires verification against frozen analysis files and the planned main framework figure.
+**Appendix readiness:** Tables A1, D1, F1, F2, G1, K1, M1, N2, and N3 are prepared for this supplement. Final submission still requires verification against the frozen analysis files.
 
 ---
 
