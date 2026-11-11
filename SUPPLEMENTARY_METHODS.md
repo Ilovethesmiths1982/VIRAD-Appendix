@@ -1,7 +1,5 @@
-# RC27 Supplementary Methods and Reproducibility Notes
+# VIRAD Supplementary Methods and Reproducibility Notes
 
-**Companion to:** [RC27_VIRAD_ARTICLE_DRAFT.md](RC27_VIRAD_ARTICLE_DRAFT.md)  
-**Source of truth:** The October 2026 VIRAD study, repository `METHODOLOGY.md`, and `APPENDICES.md`. This document is a concise technical audit trail, not a replacement for frozen source records.
 
 ## S1. Scope and experimental boundary
 
@@ -105,7 +103,7 @@ The crRNA spacer must be complementary to its RNA target; the VIRAD interval is 
 
 * **Source-excluded whole-accession occurrence:** Remove each guide's design-source accession before searching all other same-family development accessions. Search guide and reverse-complement orientations across equal-length candidate windows. Record minimum Hamming distance; thresholds are 0, ≤1, and ≤2 nucleotide differences. Nominal 23-mers are accelerated by an 8+8+7 seed strategy but full-length Hamming verification determines matches.
 * **Locus conservation:** Align development accessions within families; map guide coordinates to homologous alignment positions. Exclude guide source, uninformative and gapped loci. Summarize per-position mismatch rates, haplotype diversity, major haplotypes, and Shannon nucleotide entropy `H_i = −Σ_b p_i,b log2(p_i,b)`. Whole-genome occurrence and homologous-locus support answer different questions.
-* **Development family-alignment populations:** Coronaviridae 139; Flaviviridae 152; Orthomyxoviridae 175; Picornaviridae 431; Retroviridae 396; Togaviridae 55 accessions, as reported in the original paper.
+* **Development family-alignment populations:** Coronaviridae 139; Flaviviridae 152; Orthomyxoviridae 175; Picornaviridae 431; Retroviridae 396; Togaviridae 55 accessions, as reported in the study documentation.
 
 ## S11. Structural and host-transcript guide checks
 
@@ -152,7 +150,7 @@ The unit of observation is chosen according to the analysis: accession, sequence
 
 ## S15. Figure/table placement and attention interpretability
 
-The final main-paper display sequence is: **Figure 1** (overall VIRAD framework); **Figure 2** (51-epoch training and validation); **Figure 3** (quantitative attention summary); **Figure 4** (motif annotation support); **Figure 5** (untouched-test frozen-panel coverage); and **Table 1** (six verified representative Cas13d guides). Every main caption now appears **immediately below its figure placeholder** in the [RC27 article](RC27_VIRAD_ARTICLE_DRAFT.md).
+The final study display sequence is: **Figure 1** (overall VIRAD framework); **Figure 2** (51-epoch training and validation); **Figure 3** (quantitative attention summary); **Figure 4** (motif annotation support); **Figure 5** (untouched-test frozen-panel coverage); and **Table 1** (six verified representative Cas13d guides). Every main caption now appears **immediately below its figure placeholder** in the [RC27 article](RC27_VIRAD_ARTICLE_DRAFT.md).
 
 Detailed model architecture, dataset breakdown, six individual self-attention heatmaps, additional fusion/host cross-attention graphics, interval reconstruction, conservation, RNA folding, and guide-development diagnostics remain supplementary when the event permits. Refer to [RC27 Supplementary Figure Legends](RC27_SUPPLEMENTARY_FIGURE_LEGENDS.md) for the complete attention panel map.
 
@@ -166,18 +164,15 @@ Detailed model architecture, dataset breakdown, six individual self-attention he
 
 **Panel-to-file map:** (a) `Figure_10_Block_1_self_attention_heatmap.png`; (b) `Figure_10_Block_2_self_attention_heatmap.png`; (c) `Figure_10_Block_3_self_attention_heatmap.png`; (d) `Figure_10_Block_4_self_attention_heatmap.png`; (e) `Figure_10_Block_5_self_attention_heatmap.png`; (f) `Figure_10_Block_6_self_attention_heatmap.png`; (g) `Figure_11_cross_attention_patterns.png`. These filenames come from the user's local PowerShell results and **do not imply that the underlying files have been uploaded to GitHub**.
 
-RC27's usual limit of **five or six combined main display items** is respected. Verify that supplemental items are permitted by the final event instructions.
+Supplementary displays provide additional methodological context.
 
-## S16. Sources and final editorial checks
+## S16. Supplementary documentation
 
-Canonical detailed methods: repository `METHODOLOGY.md`. Supplementary dataset and configuration: `APPENDICES.md` and `APPENDIX_L_COMPUTATIONAL_ENVIRONMENT.md`. Original research source: October 2026 109-page VIRAD study.
-
-**Checks remaining before official submission:** (1) verify all reference metadata and insert full APA/RC27-formatted list; (2) render original study figures at legible print size and update numbering; (3) populate the main lead table directly from original frozen values; (4) add actual acknowledgements and author-contribution declarations; (5) attach the official signed RC27 AI Honor Code Statement; (6) create a Word copy with 10-point Times New Roman, continuous line numbers, and confirmed 4–10 main-text pages; (7) convert author–date to numbered superscript references in the final submitted copy.
-
+This section documents the study's computational methods, model specifications, and validation boundaries. Associated numerical evidence is provided in [Supplementary Tables](APPENDICES_AND_TABLES.md), and the supporting data are available in the [VIRAD data archive](https://drive.google.com/drive/folders/1n6sDwAfD4rUDg9qRLN996hVdfkCDaJew).
 
 ## S17. Canonical Mathematical Equations (Full Set)
 
-The equations below reproduce the labeled mathematical definitions from the repository's canonical `METHODOLOGY.md` (original numbering retained). They are supplied for scientific auditability; a few representative equations appear in the short article. Symbols are explained in the corresponding method descriptions above and in the canonical methodology. These are **computational definitions**, not experimentally measured biological laws.
+The equations below reproduce the labeled mathematical definitions from the detailed methodology (original numbering retained). They are supplied for scientific auditability; a few representative equations appear in the short article. Symbols are explained in the corresponding method descriptions above and in the canonical methodology. These are **computational definitions**, not experimentally measured biological laws.
 
 **Equation 1 | Half-open interval length**
 
@@ -474,7 +469,7 @@ Exactly three top-ranked guides per family were selected **using development sco
 
 ### S18.11 Statistical unit, uncertainty and failure modes
 
-Overlapping training windows from one viral genome are correlated observations, so interval-level, accession-level, cluster-level and family-level summaries should not be interpreted as interchangeable sample sizes. Paired bootstrap comparisons and family-stratified paired resampling used 10,000 replicates with seed 42, reporting 95% percentile intervals where the source results provide them. Multiplicity correction followed the comparison-specific Benjamini–Hochberg or Holm procedures; the RC27 article does not invent adjusted p values or interval endpoints absent from the frozen outputs. The inference controls also prevent a high any-overlap F1 from being described as precise motif-boundary recovery, attention entropy from being described as RNA contact evidence, or guide sequence matches from being described as experimentally measured antiviral efficacy.
+Overlapping training windows from one viral genome are correlated observations, so interval-level, accession-level, cluster-level and family-level summaries should not be interpreted as interchangeable sample sizes. Paired bootstrap comparisons and family-stratified paired resampling used 10,000 replicates with seed 42, reporting 95% percentile intervals where the source results provide them. Multiplicity correction followed the comparison-specific Benjamini–Hochberg or Holm procedures; this supplementary archive does not invent adjusted p values or interval endpoints absent from the frozen outputs. The inference controls also prevent a high any-overlap F1 from being described as precise motif-boundary recovery, attention entropy from being described as RNA contact evidence, or guide sequence matches from being described as experimentally measured antiviral efficacy.
 
 ### S18.12 Reproduction package and final source checks
 
@@ -484,7 +479,7 @@ The six individual self-attention images and the fusion/host cross-attention map
 
 ## S19. Viroformer architecture, equation-level implementation, and information flow
 
-This section expands the main-paper Multimodal Modeling description using the repository implementations in `src/virad/models/embeddings.py`, `gnn.py`, `fusion.py`, `attention.py`, `viroformer.py`, `structure_module.py`, `heads.py`, and `virad.py`. It is a description of the **implemented computational model**, not an independent biological validation or an assertion that every optional learning branch was active in every training run.
+This section expands the study Multimodal Modeling description using the implementation modules in `src/virad/models/embeddings.py`, `gnn.py`, `fusion.py`, `attention.py`, `viroformer.py`, `structure_module.py`, `heads.py`, and `virad.py`. It is a description of the **implemented computational model**, not an independent biological validation or an assertion that every optional learning branch was active in every training run.
 
 ### S19.1 Shared coordinate system and modality projections
 
@@ -552,9 +547,8 @@ The presence of a branch in `virad.py` does not prove that it contributed to a p
 
 For an additional **supplementary** architecture diagram, use the following left-to-right chain: synchronized nucleotide one-hot, phyloP conservation, UFold contacts, and ESM-2 host input; four 768-dimensional embedding branches; four learned softmax gates plus six-head sequence-to-structure attention; a six-block Viroformer encoder with 12-head biased self-attention, host cross-attention and a 768-to-3,072-to-768 feed-forward path; one symmetric pair-refinement and structure-gating pass; then nucleotide motif outputs and frozen interval decoding. This is a schematic specification, **not** a claim that a new diagram export has been generated.
 
-## S20. Full Viroformer method as specified in the original research paper
+## S20. Complete Viroformer computational methodology
 
-**Primary source:** Original VIRAD research paper, *Sliding-Window Construction and Multimodal Feature Assembly*, *VIRAD Multimodal Architecture*, and *Curriculum Training, Optimization, and Checkpoint Selection*. This section follows the scientific order of the source paper rather than substituting an unrelated generic transformer design. Its Equation 12 through Equation 17 and Table 3 are the original paper's methodological identifiers. Section S19 above documents the associated Python modules.
 
 ### S20.1 Why the model uses four biological inputs
 
@@ -639,7 +633,7 @@ Dropout was **0.10**, and stochastic depth was **0.10** in the reported producti
 
 ### S20.6 Iterative pair-state refinement and structure gate
 
-The first pair state comes from UFold's binary contact matrix. After the transformer has updated nucleotide representations, the dense pair decoder produces pairwise predictions from contextual states. The predicted scores are symmetrized so that the contact from `i` to `j` agrees with the contact from `j` to `i`. The original paper states that the final model used **one structural-refinement pass**, rather than an unspecified number of iterative cycles.
+The first pair state comes from UFold's binary contact matrix. After the transformer has updated nucleotide representations, the dense pair decoder produces pairwise predictions from contextual states. The predicted scores are symmetrized so that the contact from `i` to `j` agrees with the contact from `j` to `i`. The study documentation states that the final model used **one structural-refinement pass**, rather than an unspecified number of iterative cycles.
 
 A learned sigmoid structure gate controls the degree to which the encoder's structurally updated representation replaces the original fused representation. Let (E_{mathrm{mix}}) be the original fused state, `Z` the encoder-updated state, and (gamma) the gate. The implemented combination is:
 
@@ -683,7 +677,7 @@ Here, (mathcal{A}) is the set of active, supervised task groups and `s_k` is the
 
 ### S20.8 Exact staged training, numerical stability, and model selection
 
-The original paper's **Table 3** defines a four-stage curriculum that progressively introduces biological information.
+The study's four-stage training specification defines a four-stage curriculum that progressively introduces biological information.
 
 | Stage | Upper limit | Information available | Starting learning rate |
 |---|---:|---|---:|
@@ -702,4 +696,4 @@ Training ran on the reported NVIDIA L40 46-GB configuration with BF16 mixed prec
 
 The original study includes six block-level self-attention heatmaps and cross-attention diagnostics. Their role is to characterize how the trained network distributes attention across the 512-nt input context, **not** to experimentally identify RNA base pairing or host-protein contacts. The 12-head mechanism and six encoder blocks are architectural components; heatmaps of their learned weights are diagnostic measurements of model computation.
 
-A genuine claim that conservation, structure, or host context *causes* an improvement in prediction requires matched retraining comparisons and held-out scores, not merely stage-wise addition of inputs during one curriculum. Likewise, successful sequence-level Cas13d guide matching on unseen accessions does not demonstrate guide cleavage, antiviral treatment efficacy, or generalization to wholly unrepresented viral families. These restrictions are retained in the RC27 article.
+A genuine claim that conservation, structure, or host context *causes* an improvement in prediction requires matched retraining comparisons and held-out scores, not merely stage-wise addition of inputs during one curriculum. Likewise, successful sequence-level Cas13d guide matching on unseen accessions does not demonstrate guide cleavage, antiviral treatment efficacy, or generalization to wholly unrepresented viral families. These restrictions are retained in this supplementary archive.
