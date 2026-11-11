@@ -148,23 +148,9 @@ Test only each guide against its same-family accession set. Compute exact, ≤1-
 
 The unit of observation is chosen according to the analysis: accession, sequence, cluster, or family, not by counting overlapping windows as independent organisms. Paired and family-stratified bootstrap analyses used **10,000 draws** with seed 42; the latter resampled each family at its original size. Report 95% percentile confidence intervals from the 2.5th and 97.5th quantiles. Multiple hypothesis tests used Benjamini–Hochberg false-discovery-rate correction or Holm family-wise correction as specified for the comparison. Distinguish (a) prediction scores, (b) interval detection, (c) annotation agreement, (d) biological feature enrichment, and (e) independent guide sequence coverage; they are not interchangeable endpoints.
 
-## S15. Figure/table placement and attention interpretability
+## S15. Framework figure
 
-The final study display sequence is: **Figure 1** (overall VIRAD framework); **Figure 2** (51-epoch training and validation); **Figure 3** (quantitative attention summary); **Figure 4** (motif annotation support); **Figure 5** (untouched-test frozen-panel coverage); and **Table 1** (six verified representative Cas13d guides). Every main caption now appears **immediately below its figure placeholder** in the [RC27 article](RC27_VIRAD_ARTICLE_DRAFT.md).
-
-Detailed model architecture, dataset breakdown, six individual self-attention heatmaps, additional fusion/host cross-attention graphics, interval reconstruction, conservation, RNA folding, and guide-development diagnostics remain supplementary when the event permits. Refer to [RC27 Supplementary Figure Legends](RC27_SUPPLEMENTARY_FIGURE_LEGENDS.md) for the complete attention panel map.
-
-### Supplementary Figure S4: Block-level attention heatmaps
-
-**[INSERT SUPPLEMENTARY FIGURE S4 HERE , arrange source images in a legible 2 × 3 grid for panels (a–f), followed by a distinct cross-attention panel (g). Do not reconstruct matrices or invent plots when the original image files are available.]**
-
-**Supplementary Figure S4. Self-attention and cross-attention patterns in VIRAD.** **(a–f)** Self-attention heatmaps from Viroformer Blocks 1–6, respectively, depicting attention weights among positions of the 512-nucleotide analysis window. **(g)** Cross-attention patterns from the multimodal architecture. Together, the panels illustrate the distribution of model attention across successive blocks and between representations. These are model-derived attention weights, not direct experimental observations of nucleotide interactions or functional RNA motifs. **Before final submission**, verify whether each heatmap is averaged over all 12 attention heads or represents a selected head, and identify the accession/window, model checkpoint, evaluation split, and color-scale normalization from the saved image metadata or plotting script.
-
-**Supplementary attention Results text.** The six Viroformer blocks exhibited different self-attention distributions (Supplementary Figure S4a–f), indicating that successive encoder layers distributed attention differently among nucleotide positions. The additional cross-attention visualization (Supplementary Figure S4g) provides a qualitative view of how attention was allocated between model representations. The heatmaps complement, rather than replace, the normalized-entropy and effective-position comparisons presented in main Figure 3. Their visual patterns alone cannot establish the biological function of a candidate motif.
-
-**Panel-to-file map:** (a) `Figure_10_Block_1_self_attention_heatmap.png`; (b) `Figure_10_Block_2_self_attention_heatmap.png`; (c) `Figure_10_Block_3_self_attention_heatmap.png`; (d) `Figure_10_Block_4_self_attention_heatmap.png`; (e) `Figure_10_Block_5_self_attention_heatmap.png`; (f) `Figure_10_Block_6_self_attention_heatmap.png`; (g) `Figure_11_cross_attention_patterns.png`. These filenames come from the user's local PowerShell results and **do not imply that the underlying files have been uploaded to GitHub**.
-
-Supplementary displays provide additional methodological context.
+**Figure 1. VIRAD computational workflow (to be supplied).** A single overview diagram will illustrate the end-to-end analysis. The figure is not yet included in this repository. All methods and quantitative evidence remain documented in the text and supplementary tables; no additional figure panels are required.
 
 ## S16. Supplementary documentation
 
