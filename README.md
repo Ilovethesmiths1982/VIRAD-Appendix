@@ -1,70 +1,58 @@
-# VIRAD | Supplementary Research Archive
+# VIRAD
+### Supplementary Methods, Data, and Source Code
 
-**Methods · Algorithms · Equations · Supplementary Tables · Source Code**
+**VIRAD** is a leakage-controlled multimodal computational framework for identifying conserved viral RNA motifs and prioritizing candidate Cas13d guides. This repository presents the study's extended methodology, mathematical formulations, supplementary tables, computational documentation, and selected implementation files in a structured research appendix.
 
-This repository accompanies the **VIRAD** research manuscript and provides extended methodological documentation, supplementary results tables, computational provenance, and selected source-code files for a leakage-controlled multimodal framework for **viral RNA motif discovery and Cas13d guide prioritization**.
+## Repository contents
 
-**Main research repository:** [VIRAD-2026](https://github.com/Ilovethesmiths1982/VIRAD-2026)  
-**Manuscript:** [RC27 VIRAD Article Draft](https://github.com/Ilovethesmiths1982/VIRAD-2026/blob/main/manuscripts/RC27_VIRAD_ARTICLE_DRAFT.md)  
-**Supporting data archive:** [VIRAD Google Drive](https://drive.google.com/drive/folders/1n6sDwAfD4rUDg9qRLN996hVdfkCDaJew)
-
-## About this archive
-
-VIRAD combines sequence, evolutionary conservation, predicted RNA secondary structure, and host-associated computational features to identify candidate viral RNA motifs. Downstream analyses prioritize Cas13d guides and evaluate a frozen guide panel against an untouched sequence partition. The archive is intended to make the computational workflow, model assumptions, validation boundaries, and supplementary evidence easier to inspect.
-
-## Documentation
-
-| Resource | Scope |
+| Section | Description |
 | --- | --- |
-| **[Detailed Methodology](DETAILED_METHODOLOGY.md)** | End-to-end study design, sequence acquisition, filtering, leakage-controlled partitions, feature construction, architecture, optimization, inference, guide ranking, and statistical procedures |
-| **[Supplementary Methods](SUPPLEMENTARY_METHODS.md)** | Sections S1–S20 with mathematical equations, implementation-level explanations, Viroformer information flow, validation protocols, and audit checkpoints |
-| **[Appendices and Tables](APPENDICES_AND_TABLES.md)** | Appendices A–O, including dataset composition, model configuration, motif catalog summaries, guide evidence, panel freeze, and untouched-test results |
-| **[Computational Environment](COMPUTATIONAL_ENVIRONMENT.md)** | Computational resources, software environment, reproducibility settings, and implementation provenance |
-| **[Supplementary Figure Legends](SUPPLEMENTARY_FIGURE_LEGENDS.md)** | Supplementary figure descriptions and provenance notes |
-| **[Source Code Index](SOURCE_CODE.md)** | Selected original source files, their roles, and the limits of this partial code snapshot |
+| [Detailed Methodology](DETAILED_METHODOLOGY.md) | Data acquisition, sequence quality control, cluster-disjoint partitioning, evolutionary conservation, multimodal features, Viroformer architecture, optimization, inference, motif characterization, and Cas13d guide prioritization |
+| [Supplementary Methods and Algorithms](SUPPLEMENTARY_METHODS.md) | Extended protocols, mathematical equations, architecture details, validation procedures, and reproducibility checkpoints |
+| [Supplementary Tables and Appendices](APPENDICES_AND_TABLES.md) | Dataset composition, training and evaluation summaries, motif catalogs, guide screening, frozen-panel selection, and untouched-test results |
+| [Computational Environment](COMPUTATIONAL_ENVIRONMENT.md) | Hardware, software, optimization settings, and reproducibility information |
+| [Supplementary Figure Legends](SUPPLEMENTARY_FIGURE_LEGENDS.md) | Figure descriptions and supporting methodological context |
+| [Source Code](SOURCE_CODE.md) | Index of selected implementation files and their functions |
 
-## Selected implementation files
+## Research workflow
 
-| Research component | Source |
+1. **Data preparation:** viral sequence acquisition, quality filtering, redundancy reduction, and leakage-controlled partitioning.
+2. **Feature construction:** sliding-window representation of sequence, evolutionary conservation, predicted RNA structure, and host-associated context.
+3. **Motif discovery:** multimodal learning, validation-derived interval decoding, and genome-scale motif catalog construction.
+4. **Candidate guide development:** Cas13d guide enumeration, sequence and structural assessment, host-transcript similarity checks, and ranking analyses.
+5. **Frozen-panel evaluation:** prespecified guide selection followed by evaluation against an untouched test partition.
+
+## Supplementary datasets
+
+The accompanying research data are available through the following archive:
+
+**[VIRAD Supplementary Data — Google Drive](https://drive.google.com/drive/folders/1n6sDwAfD4rUDg9qRLN996hVdfkCDaJew)**
+
+The archive is organized into four collections:
+
+| Collection | Contents |
 | --- | --- |
-| Sequence preprocessing | [scripts/preprocess.py](scripts/preprocess.py) |
-| Model training | [scripts/train.py](scripts/train.py) |
-| Model validation | [scripts/validate.py](scripts/validate.py) |
-| Inference | [scripts/infer.py](scripts/infer.py) |
-| Validation-derived interval decoding | [scripts/validation_interval_grid.py](scripts/validation_interval_grid.py) |
-| Cas13d guide development, freeze, and test | [scripts/cas13d_full_validation.py](scripts/cas13d_full_validation.py) |
-| Viroformer architecture | [src/virad/models/viroformer.py](src/virad/models/viroformer.py) |
-| VIRAD model | [src/virad/models/virad.py](src/virad/models/virad.py) |
-| Data partitioning | [src/virad/data/splits.py](src/virad/data/splits.py) |
-| Sliding-window features | [src/virad/features/windows.py](src/virad/features/windows.py) |
+| Motif catalog | Identified motif intervals, annotation comparisons, family-level summaries, and unmatched candidates |
+| Guide development | Candidate guides, development validation, matched controls, and ranking sensitivity |
+| Frozen guide panel | Selected 18-guide panel and freeze documentation |
+| Untouched test | Frozen-panel test evaluation, coverage tables, and summary statistics |
 
-The included code is **not a standalone distribution**. For all package modules, dependencies, configuration files, and tests, refer to the [main implementation repository](https://github.com/Ilovethesmiths1982/VIRAD-2026).
+Access to these files depends on the Google Drive folder's sharing settings.
 
-## Supporting data
+## Source code
 
-The [research-data folder](https://drive.google.com/drive/folders/1n6sDwAfD4rUDg9qRLN996hVdfkCDaJew) organizes four supporting datasets:
+Selected research scripts and model modules are included in the [source-code index](SOURCE_CODE.md), covering preprocessing, training, validation, inference, interval decoding, Cas13d guide assessment, model architecture, partitioning, and window construction.
 
-1. **Motif catalog:** identified motifs, annotation overlap, family summaries, and unmatched candidates.
-2. **300-guide development:** development validation, matched controls, ranking sensitivity, and guide FASTA.
-3. **Frozen 18-guide panel:** selected guide table and freeze manifest.
-4. **Untouched test:** frozen-panel evaluation, coverage tables, and test summary.
+The included code is a **partial research snapshot**, not a complete standalone software distribution. Additional dependencies, input data, model assets, and configurations may be required for execution.
 
-The data files are linked rather than duplicated here. Public availability depends on the Google Drive sharing permissions.
+## Scientific scope
 
-## Interpretation and limitations
+The reported motif and guide findings are based on computational analyses. Annotation-unmatched motifs are not experimentally validated novel motifs. Predicted guide coverage does not demonstrate antiviral efficacy or establish biological safety. Development-set analyses and untouched-test results are reported separately to preserve their respective evaluation boundaries.
 
-VIRAD's reported findings are **computational**. Annotation-unmatched motifs are not experimentally confirmed novel motifs. Sequence-level guide matches do not establish cellular activity, antiviral efficacy, or clinical safety. Guide development and frozen-panel testing must remain separate when interpreting results. See the supplementary methods and tables for analysis-specific definitions, population sizes, and thresholds.
+## License
 
-## Reproducibility and provenance
-
-Documentation and selected implementation files were copied from [VIRAD-2026](https://github.com/Ilovethesmiths1982/VIRAD-2026) on **11 November 2026**. The supplementary archive preserves the scientific source text rather than silently revising reported results. Files in this repository do not constitute a complete independent reproduction package, and inclusion of a method does not imply experimental verification.
-
-## Citation and license
-
-When referencing the research, cite the accompanying manuscript and identify the repository version or commit used. No DOI is asserted for this archive.
-
-Original code is distributed under the copied [MIT License](LICENSE). Third-party software, data, and pretrained models may have separate licenses and terms.
+Source code is provided under the [MIT License](LICENSE). Third-party software, datasets, and pretrained models remain subject to their respective licenses and usage conditions.
 
 ---
 
-**Repository purpose:** transparent supplementary documentation for scientific review, research communication, and computational reproducibility.
+*VIRAD Supplementary Research Archive · 2026*
