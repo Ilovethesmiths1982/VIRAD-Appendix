@@ -14,10 +14,6 @@
 | [Source Code](SOURCE_CODE.md) | Index of selected implementation files and their functions |
 | [Reproducibility Protocol](REPRODUCIBILITY_PROTOCOL.md) | Required artifacts, example command interfaces, data-firewall checks, and independent verification checklist |
 
-## Framework figure
-
-**Figure 1. VIRAD computational workflow** will be added as the sole figure in this archive. It will summarize the major stages from sequence acquisition and leakage-controlled preprocessing through multimodal motif discovery, Cas13d guide prioritization, and frozen-panel evaluation. No supplementary figures are planned.
-
 ## Research workflow
 
 1. **Data preparation:** viral sequence acquisition, quality filtering, redundancy reduction, and leakage-controlled partitioning.
