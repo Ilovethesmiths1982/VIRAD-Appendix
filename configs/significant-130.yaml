@@ -1,0 +1,81 @@
+# Documented study run. Leakage-free CD-HIT cluster holdout, ESM-2 host
+# vector, UFold RNA structure features, n_refine=1, and the
+# 68,819,416-parameter trunk.
+# One seed (42) and curriculum 2+5+5+43 (55 epochs). n_refine stays 1.
+# UFold replaced SPOT-RNA after live timing showed that SPOT-RNA could not
+# finish the structure stage inside the 72 h study window. UFold outputs hard
+# binary contact maps (0/1), not calibrated SPOT-RNA pairing probabilities.
+# Motif-type supervision uses the documented 87-class vocabulary (IDs 0-86).
+# This is the only study config. Stage 4 is 43 epochs.
+seed: 42
+model_seeds: [42]
+scale: paper
+methodology: significant-130
+deviations:
+  - n_refine_3_to_1
+  - curriculum_100_to_55_epochs
+  - esm2_host_vector
+  - ncbi_motif_labels
+  - one_seed_cluster_holdout
+  - high_estimate_gate_130
+  - spotrna_to_ufold_binary_structure
+  - ufold_iupac_unknown_pair_prior
+n_res_train: 512
+n_res_infer: 1024
+train_stride: 256
+infer_stride: 256
+n_block: 6
+n_head: 12
+n_cycle: 3
+n_refine: 1
+d_model: 768
+d_ffn: 3072
+dropout: 0.1
+n_motif_classes: 87
+batch_size: 32
+grad_accum_steps: 32
+micro_batch_size: 1
+lambda_kl: 0.1
+pair_prob_threshold: 0.5
+structure_predictor: ufold
+spot_rna_script: SPOT-RNA.py
+spot_rna_python: ""
+require_cdhit: true
+require_complete_structure: true
+split_seed: 42
+train_fraction: 0.70
+val_fraction: 0.15
+stage1_epochs: 2
+stage2_epochs: 5
+stage3_epochs: 5
+stage4_epochs: 43
+early_stop_patience: 8
+early_stop_min_total_epochs: 20
+warmup_steps: 10000
+warmup_fraction: 0.10
+max_total_windows: 0
+max_train_windows: 0
+max_windows_per_record: null
+motif_centered_only: false
+guide_confidence_min: 0.60
+ann_coords: pdf
+paper_cluster_cap: 5670
+paper_id_fetch_cap: 8000
+paper_per_family_complete_cap: 600
+paper_coronaviridae_complete_cap: 250
+use_esm_host: true
+host_esm_dim: 1280
+host_proj_dim: 768
+checkpoint_every: 5
+checkpoint_keep: 4
+amp: bf16
+allow_tf32: true
+fused_adamw: true
+torch_compile: false
+use_sdpa: true
+num_workers: 0
+pin_memory: true
+prefetch_factor: 2
+cache_windows: true
+budget_usd: 150.0
+high_estimate_gate_usd: 130.0
