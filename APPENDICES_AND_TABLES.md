@@ -24,7 +24,7 @@ These appendices present the study's numerical summaries, validation records, mo
 | M | Motif catalog and prioritized unmatched subset |
 | N | Guide-level evidence and supplementary data inventory |
 
-The original figure exports, complete 1,424-row motif catalog, complete 300-guide development table, and full frozen 18-guide files remain separate data artifacts. A textual appendix does not substitute for those files.
+The complete 1,424-row motif catalog, complete 300-guide development table, and full frozen 18-guide files remain separate data artifacts. A textual appendix does not substitute for those files.
 
 ---
 
@@ -300,7 +300,7 @@ The following two tables reproduce the 18-row data from the study's guide-develo
 | Six self-attention PNGs and cross-attention image | Filenames known from local PowerShell search; original pixels/metadata have not been uploaded here |
 | Any code/configuration or statistical notebooks | Refer to repository implementation and frozen run-specific configurations, rather than assuming every branch was active |
 
-**Appendix readiness:** Tables A1, D1, F1, F2, G1, K1, M1, N2, and N3 are prepared for this supplement. Final submission still requires verification against frozen analysis files and final figure exports.
+**Appendix readiness:** Tables A1, D1, F1, F2, G1, K1, M1, N2, and N3 are prepared for this supplement. Final submission still requires verification against frozen analysis files and the planned main framework figure.
 
 ---
 
